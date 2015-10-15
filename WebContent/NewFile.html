@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Loan calculator</title>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+<div class="col-lg-6">
+<h2>Country change</h2>
+<form action="#" method="post" class="form-horizontal col-lg-7" >
+	<p>
+		<label class="control-label">Country:</label>
+		<span>
+			<input type="radio" name="countryName" value="India" checked>India
+		</span>
+		<span>
+			<input type="radio" name="countryName" value="US"> US
+		</span>
+   </p>
+   <p>
+		<label class="control-label">Cities:</label>
+		<select id="cities"></select>
+   </p>
+</form>
+<p id="result" class="control-label"></p>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="CountryModel.js"></script>
+<script type="text/javascript" src="CountryService.js"></script>
+<script type="text/javascript" src="CountryView.js"></script>
+</body>
+</html>

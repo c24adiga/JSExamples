@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Loan calculator</title>
+<script type="text/javascript" src="js/loan/LoanModel.js"></script>
+
+<script type="text/javascript" src="js/loan/EmiService.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+<div class="col-lg-6">
+<h2>EMI Calculator</h2>
+<form action="#" method="post" class="form-horizontal col-lg-7">
+	<p>
+		<label class="control-label">Select LoanType:</label>
+		<span>
+			<input type="radio" name="loanType" value="Personal">Personal
+		</span>
+		<span>
+			<input type="radio" name="loanType" value="Home"> Home
+		</span>
+   </p>
+	<p>
+		<label class="control-label">Amount:</label>
+		<span>
+			<input type="text" id="amount" class="form-control" required autofocus>
+		</span>
+	<p>
+	<p>
+		<label class="control-label">Tenure:</label>
+		<span>
+			<input type="number" id="tenure" class="form-control" min="4" max="84" required>
+		</span>
+	<p>
+		<label class="control-label">Name:</label>
+		<span>
+			<input type="text" id="name" class="form-control" required>
+		</span>
+	<p>
+	<p>
+		<label class="control-label">Email:</label>
+		<span>
+			<input type="email" id="email" class="form-control" required>
+		</span>
+	<p>
+	
+	<div id="personal" style="display: none">
+		<p>
+			<label class="control-label">Reason:</label>
+			<span>
+				<textarea id="reason" id="reason" rows="3" cols="20" required></textarea>
+			</span>
+		<p>
+		<p>
+			<label class="control-label">Date of birth:</label>
+			<span>
+				<input type="date" id="dob" class="form-control" required>
+			</span>
+		<p>
+	</div>
+	<div id="home" style="display: none">
+		<p>
+			<label class="control-label">Property Name:</label>
+			<span>
+				<input type="text" id="propertyName" class="form-control" required>
+			</span>
+		<p>
+		<p>
+			<label class="control-label">Property type:</label>
+			<span>
+				<input type="radio" name="propertyType" value="land">Land
+			</span>
+			<span>
+				<input type="radio" name="propertyType" value="flat">Flat
+			</span>
+		<p>
+			<label class="control-label">Sqft:</label>
+			<span>
+				<input type="text" id="sqft" class="form-control" required>
+			</span>
+		<p>
+	</div>
+	<p>
+		<label class="control-label"></label> 
+		<span><input type="submit" class="btn btn-primary" style="float: left" id="calculateEMI">
+		</span>
+	</p>
+</form>
+<p id="result"></p>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="js/loan/EmiView.js"></script>
+</body>
+</html>
