@@ -9,8 +9,8 @@ var PersonalLoan = Object.create(Loan, {
 	reason : {value:""}
 });
 
-var HomeLoan = {
+var HomeLoan = Object.create(Loan, {
 	sqf :{ value : 0.0},
 	propertyType :{ value : ''},
 	propertyName :{ value : ''},
-};
+});

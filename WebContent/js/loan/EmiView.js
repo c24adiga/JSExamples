@@ -17,7 +17,7 @@ window.onload=function(){
 		}
 	});
 	}
-	var personalLoan = Object.create(PersonalLoan);
+	var personalLoan = new PersonalLoan();
 	personalLoan.name = "Ram";
 	personalLoan.amount = 500000.00;
 	personalLoan.email = 'c@c.com';
@@ -25,7 +25,7 @@ window.onload=function(){
 	personalLoan.dob= new Date();
 	personalLoan.tenure=5;
 	
-	var homeLoan = Object.create(HomeLoan);
+	var homeLoan = new HomeLoan();
 	homeLoan.name = 'Sham';
 	homeLoan.amount = 100000.00;
 	homeLoan.email='s@c.om';
