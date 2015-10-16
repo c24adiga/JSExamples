@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Loan calculator</title>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+<div class="col-lg-6">
+<h2>Customize message</h2>
+<form action="#" method="post" id="form1" class="form-horizontal col-lg-7" >
+	<p>
+		<label class="control-label">Name:</label>
+		<span>
+			<input type="text" id="name" class="form-control" placeholder="first name"  required
+    >				<span class="error" style="color:red;"></span>
+    
+		</span>
+	<p>
+		<p>
+		<label class="control-label">Email:</label>
+		<span>
+			<input type="email" id="emailAddr" class="form-control" placeholder="test@email.com"  required>
+							<span class="error" style="color:red;"></span>
+		</span>
+	<p>
+		<label class="control-label"></label> 
+		<span><input type="submit" class="btn btn-primary" style="float: left" id="calculateEMI">
+		</span>
+	</p>
+</form>
+
+</div>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+(function validate() {
+	var namedom = document.getElementById('name');
+
+	var email = document.getElementById('emailAddr');
+	var form = document.getElementById('form1');
+	var self=this;
+	var checkFirstName = function(){
+		var regex = /^[A-Za-z]*$/;
+		if(namedom.value.match(regex)) {
+			document.getElementsByClassName('error')[0].innerHTML = '';
+		} else {
+			document.getElementsByClassName('error')[0].innerHTML = 'Invalid first name';
+		}
+	}
+
+
+	namedom.addEventListener('change', checkFirstName, false);
+
+	var checkEmailAddress = function(){
+
+		var regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+		if(email.value.match(regex)) {
+			document.getElementsByClassName('error')[1].innerHTML = '';
+			email.setCustomValidity('');
+		} else {
+			document.getElementsByClassName('error')[1].innerHTML = 'Please enter a valid eMail address';
+		}
+	}
+
+	email.addEventListener('change', checkEmailAddress, false);
+
+	form.addEventListener('submit', function(e) {
+		if(form.classList) {
+			form.classList.add('submitted');
+			checkEmailAddress();
+			checkFirstName();
+		}
+		if (!this.checkValidity()) {
+			e.preventDefault();
+		}
+	});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+<style type="text/css">
+body {
+	background-color: #fff;
+	color: #111;
+	margin: 0;
+	padding: 0;
+	font: 0.75em/1.3 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+		Verdana, Tahoma, sans-serif;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 20px auto 40px auto;
+}
+
+form {
+	width: 400px;
+}
+
+form div {
+	float: left;
+	width: 400px;
+	padding: 0 0 0.75em 0;
+}
+
+form label {
+	float: left;
+	width: 120px;
+}
+
+form textarea,form input {
+	float: right;
+	width: 250px;
+	border-top: 1px solid blue;
+	border-right: 1px solid blue;
+	border-bottom: 1px solid blue;
+	border-left: 1px solid blue;
+	-webkit-box-shadow: inset -2px 1px 2px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: inset -2px 1px 2px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: inset -2px 1px 2px 2px rgba(0, 0, 0, 0.1);
+	padding: 4px;
+}
+
+form input[type="submit"],input[type="reset"] {
+	float: none;
+	width: auto;
+	padding: 0.25em;
+	-webkit-box-shadow: -2px 1px 2px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: -2px 1px 2px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: -2px 1px 2px 2px rgba(0, 0, 0, 0.1);
+	font-size: 125%;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.submitted :invalid {
+	background-image: url(errormsg.png);
+	background-position: 98% center;
+	background-repeat: no-repeat;
+}
+
+form div.submit {
+	text-align: right;
+}
+</style>
+
+</head>
+<body>
+	<div class="wrapper">
+		<form method="post" action="#" id="form2" name="myform" novalidate>
+			<div>
+				<label for="fname">FirstName</label> <input type="text"
+					name="firstName" id="fname" />
+				<p class="error"></p>
+			</div>
+
+			<div>
+				<label for="lname">LastName</label> <input type="text"
+					name="lastName" id="lname" />
+				<p class="error"></p>
+			</div>
+
+			<div>
+				<label for="address">Address</label>
+				<textarea name="address" id="address" rows="10" cols="30"></textarea>
+			</div>
+
+			<div class="submit">
+				<input type="submit" name="submit" id="submit" value="Submit" /> <input
+					type="reset" name="reset" id="reset" value="Reset" />
+			</div>
+		</form>
+	</div>
+
+
+	<script type="text/javascript">
+(function(){
+	
+	var firstName=document.getElementById('fname');
+	var lastName=document.getElementById('lname');
+	var form=document.getElementById('form2');
+	var checkFirstName=function(e){
+		console.log(e);
+		var regex=/^[A-Za-z]+$/
+		if(firstName.value.match(regex)){
+			firstName.setCustomValidity('');
+		}
+		else
+firstName.setCustomValidity('First Name is mandatory');
+	}
+	
+	var checkLastName=function(e){
+		console.log(e);
+		var regex=/^[A-Za-z]+$/
+		if(lastName.value.match(regex)){
+			lastName.setCustomValidity('');
+		}
+		else
+lastName.setCustomValidity('Last Name is mandatory');
+	}
+
+firstName.addEventListener('change',checkFirstName
+		,false)
+		
+lastName.addEventListener('change',checkLastName
+		,false)		
+		
+form.addEventListener('submit',function(e){
+	
+	if(form.classList){
+		form.classList.add('submitted');
+		checkFirstName();
+		checkLastName();		
+	}
+	if(!this.checkValidity()){
+		e.preventDefault()
+	form.getElementsByClassName('error')[0].innerHTML=
+		firstName.validationMessage;
+	form.getElementsByClassName('error')[1].innerHTML=
+			lastName.validationMessage;
+	}
+	
+},false)		
+	
+})();
+
+</script>
+</body>
+</html>
