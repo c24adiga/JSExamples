@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Web storage example</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<h2>Session storage example</h2>
+				<label class="control-label">Name:</label> <span> <input
+					type="text" id="name" class="form-control" placeholder="first name"
+					required>
+				</span> <label class="control-label">Email:</label> <span> <input
+					type="email" id="email" class="form-control"
+					placeholder="test@email.com" required>
+				</span>
+				<table border="1">
+					<thead>
+						<tr>
+							<th>Item id</th>
+							<th>Item name</th>
+							<th>Item price</th>
+							<th>Item qty</th>
+							<th>Extended</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr>
+					<td><span id="id"></span></td>
+										<td><span id="desc"></span></td>
+										<td><span id="price"></span></td>
+										<td><input type="number" id="qty"/></td>
+										<td><span id="ext"></span></td>					
+					</tr>
+					</tbody>
+
+
+				</table>
+				<p><input type="button" id="nextButton" value="Store the updated value in session storage"></input></p>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/webstorage/webstorage.js"></script>	
+</body>
+</html>
