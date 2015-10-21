@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" 
+href="css/bootstrap.min.css">
+</head>
+<body>
+<div id="container">
+<h1>WebStorage</h1>
+<h2>Get Data From Session Storage Example</h2>
+<h3>Order Summary</h3>
+<div>
+<div><span id="name"></span></div>
+</div>
+<table border="1">
+<thead>
+<tr>
+<th>Item Id</th>
+<th>Item Description</th>
+<th>Item Price</th>
+<th>Item Qty</th>
+<th>Extended</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span id="id"></span></td>
+<td><span id="desc"></span></td>
+<td><span id="price"></span></td>
+<td><span id="qty"></span></td>
+<td><span id="ext"></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script type="text/javascript">
+
+(function(){
+	var session=window.sessionStorage;
+	var data=JSON.parse(session.getItem("cart"));	
+	document.querySelector('#name').textContent=
+		data.Name;
+	
+	document.querySelector('#price').textContent=
+		data.Price;
+	document.querySelector('#qty').textContent=
+		data.Qty;
+	document.querySelector('#desc').textContent=
+		data.Desc;
+	document.querySelector('#id').textContent=
+		data.Id;
+	document.querySelector('#ext').textContent=
+		data.ext;
+}());
+
+
+</script>
+</body>
+
+</html>

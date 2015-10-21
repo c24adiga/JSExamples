@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+<article>
+<h1>Forms <span>new Html5 Tags</span></h1>
+</article>
+<div class="well hidden">
+<form name="form1" id="form1" novalidate>
+<label>Search :</label>
+<input type="search" id="search" name="search" 
+placeholder="Enter Your Search Text" >
+</form>
+
+<form id="form2">
+<label for="name">Name :</label>
+<input type="text" id="name" 
+placeholder="First and Last" required 
+pattern="[a-zA-Z a-zA-Z]*" autofocus>
+<label for="email">Email :</label>
+<input type="email" id="email" 
+placeholder="abc@test.com" required>
+<label for="phone">Phone Number :</label>
+<input type="tel" id="phone" 
+placeholder="000-00000000" required 
+pattern="[0-9]{3}-[0-9]{8}">
+
+<label for="yearsInDev">Number Of Years in Development :</label>
+<input type="number" id="yearsInDev" 
+ required min="2" max="30" step="2">
+
+<label for="devExprange"> Development  Experience Range:</label>
+<input type="range" id="devExprange" 
+ required min="0" max="80" step="1" value="50">
+ 
+<datalist id="designation">
+<option value="Junior Developer">
+<option value="Senior Developer">
+<option value="Team Lead">
+<option value="Manager">
+<option value="Delivery Manager">
+</datalist>
+
+<label for="position">Position</label>
+<input type="text" id="position" list="designation">
+
+<label for="joiningDate">Joining date</label>
+<input type="date" id="joiningDate" 
+value="2015-10-08" min="2015-10-08" max="2015-10-30">
+
+<label for="joiningtime">Joining Time</label>
+<input type="datetime-local" id="joiningtime" 
+value="2015-10-08 09:30:00 UTC" >
+
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</form>
+</div>
+</body>
+</html> 

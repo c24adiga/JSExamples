@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Loan calculator</title>
+<title>Ajax call example</title>
 
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
@@ -20,35 +20,7 @@
 </div>
 </div>
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript">
-(function call() {
-		//js ajax call
-	  xhttp = new XMLHttpRequest();
-	  console.log(window);
-	  xhttp.onreadystatechange = function() {
-	    if (xhttp.readyState == 4 && xhttp.status == 200) {
-	    	var result = xhttp.responseText 
-			var data = JSON.parse(result);
-			console.log(data);
-	    	document.getElementsByClassName('js')[0].innerHTML = result;
-	    }
-	  };
-	  xhttp.open("GET", "data.json", true);
-	  xhttp.send();
-	  
-  
-	//jquery ajax call
-	  jQuery.ajax({
-		  url: "http://api.joind.in/v2.1/talks/10889",
-		  method:'GET',
-		}).done(function(response, status) {
-			console.log(status, response);
-	    	document.getElementsByClassName('jquery')[0].innerHTML = response.talks[0].comments_uri;
-
-		  jQuery( this ).addClass( "done" );
-		});
-
-})();
-</script>
+<script type="text/javascript" src="js/ajax/xhrLevel1.js"></script>
+<script type="text/javascript" src="js/ajax/xhrLevel2.js"></script>
 </body>
 </html>
